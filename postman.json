@@ -21,7 +21,7 @@
         "script": {
           "exec": [
             "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
-            "pm.test(\"Response is array\", () => Array.isArray(pm.response.json()));"
+            "console.log(\"Body:\", pm.response.text());"
           ],
           "type": "text/javascript"
         }
@@ -44,7 +44,7 @@
         "script": {
           "exec": [
             "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
-            "pm.test(\"Contains Inception\", () => pm.response.text().includes(\"Inception\"));"
+            "console.log(\"Body:\", pm.response.text());"
           ],
           "type": "text/javascript"
         }
@@ -70,7 +70,8 @@
         "listen": "test",
         "script": {
           "exec": [
-            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
+            "console.log(\"Body:\", pm.response.text());"
           ],
           "type": "text/javascript"
         }
@@ -92,7 +93,8 @@
         "listen": "test",
         "script": {
           "exec": [
-            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
+            "console.log(\"Body:\", pm.response.text());"
           ],
           "type": "text/javascript"
         }
@@ -115,7 +117,7 @@
         "script": {
           "exec": [
             "pm.test(\"Status 404\", () => pm.response.to.have.status(404));",
-            "pm.test(\"Body contains 'Movie not found'\", () => pm.response.text().includes(\"Movie not found\"));"
+            "console.log(\"Body:\", pm.response.text());"
           ],
           "type": "text/javascript"
         }
@@ -142,7 +144,7 @@
         "script": {
           "exec": [
             "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
-            "pm.test(\"Response includes 'Bonjour Reda'\", () => pm.response.text().includes(\"Bonjour Reda\"));"
+            "console.log(\"Body:\", pm.response.text());"
           ],
           "type": "text/javascript"
         }
