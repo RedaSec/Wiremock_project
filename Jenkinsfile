@@ -13,7 +13,7 @@ pipeline {
     stage('Run Newman tests') {
       steps {
         echo 'Exécution des tests Postman avec Newman...'
-        bat '"C:\\Users\\RedaDERRASSI\\AppData\\Roaming\\npm\\newman.cmd" run postman.json'
+        bat '"C:\\Users\\RedaDERRASSI\\AppData\\Roaming\\npm\\newman.cmd" run postman.json --reporters cli,html --reporter-html-export newman-report.html'
       }
     }
 
