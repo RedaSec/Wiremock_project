@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/movies/1"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": 1,
+      "title": "Inception",
+      "director": "Christopher Nolan",
+      "year": 2010,
+      "genre": "Sci-Fi"
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+  } 

@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/movies/timeout"
+  },
+  "response": {
+    "status": 200,
+    "fixedDelayMilliseconds": 10000,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "jsonBody": {
+      "message": "This response is intentionally delayed to simulate a timeout."
+    }
+  }
+}

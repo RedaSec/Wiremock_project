@@ -1,0 +1,19 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/users/bonjour",
+    "queryParameters": {
+      "nom": {
+        "matches": ".*"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "Bonjour {{request.query.nom}}, quel film voulez-vous regarder ?",
+    "headers": {
+      "Content-Type": "text/plain"
+    },
+    "transformers": ["response-template"]
+  }
+}

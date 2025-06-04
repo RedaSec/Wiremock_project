@@ -1,0 +1,120 @@
+{
+  "info": {
+    "name": "WireMock Movies API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "GET /movies",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8181/movies"
+        }
+      },
+      "event": [{
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
+            "pm.test(\"Response is array\", () => Array.isArray(pm.response.json()));"
+          ],
+          "type": "text/javascript"
+        }
+      }]
+    },
+    {
+      "name": "GET /movies/1",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8181/movies/1"
+        }
+      },
+      "event": [{
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
+            "pm.test(\"Contains Inception\", () => pm.response.text().includes(\"Inception\"));"
+          ],
+          "type": "text/javascript"
+        }
+      }]
+    },
+    {
+      "name": "GET /movies?genre=action",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8181/movies?genre=action"
+        }
+      },
+      "event": [{
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+          ],
+          "type": "text/javascript"
+        }
+      }]
+    },
+    {
+      "name": "GET /movies/timeout",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8181/movies/timeout"
+        }
+      },
+      "event": [{
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));"
+          ],
+          "type": "text/javascript"
+        }
+      }]
+    },
+    {
+      "name": "GET /movies/999 (erreur 404)",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8181/movies/999"
+        }
+      },
+      "event": [{
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Status 404\", () => pm.response.to.have.status(404));",
+            "pm.test(\"Body contains 'Movie not found'\", () => pm.response.text().includes(\"Movie not found\"));"
+          ],
+          "type": "text/javascript"
+        }
+      }]
+    },
+    {
+      "name": "GET /users/bonjour?nom=Reda",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8181/users/bonjour?nom=Reda"
+        }
+      },
+      "event": [{
+        "listen": "test",
+        "script": {
+          "exec": [
+            "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
+            "pm.test(\"Response includes 'Bonjour Reda'\", () => pm.response.text().includes(\"Bonjour Reda\"));"
+          ],
+          "type": "text/javascript"
+        }
+      }]
+    }
+  ]
+}

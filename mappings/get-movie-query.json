@@ -1,0 +1,18 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/movies",
+    "queryParameters": {
+      "genre": {
+        "equalTo": "action"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "[{\"id\":1,\"title\":\"Interstellar\"}]",
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
