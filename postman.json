@@ -9,7 +9,11 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8181/movies"
+          "raw": "http://localhost:8181/movies",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8181",
+          "path": ["movies"]
         }
       },
       "event": [{
@@ -28,7 +32,11 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8181/movies/1"
+          "raw": "http://localhost:8181/movies/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8181",
+          "path": ["movies", "1"]
         }
       },
       "event": [{
@@ -47,7 +55,15 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8181/movies?genre=action"
+          "raw": "http://localhost:8181/movies?genre=action",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8181",
+          "path": ["movies"],
+          "query": [{
+            "key": "genre",
+            "value": "action"
+          }]
         }
       },
       "event": [{
@@ -65,7 +81,11 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8181/movies/timeout"
+          "raw": "http://localhost:8181/movies/timeout",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8181",
+          "path": ["movies", "timeout"]
         }
       },
       "event": [{
@@ -83,7 +103,11 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8181/movies/999"
+          "raw": "http://localhost:8181/movies/999",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8181",
+          "path": ["movies", "999"]
         }
       },
       "event": [{
@@ -102,7 +126,15 @@
       "request": {
         "method": "GET",
         "url": {
-          "raw": "http://localhost:8181/users/bonjour?nom=Reda"
+          "raw": "http://localhost:8181/users/bonjour?nom=Reda",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8181",
+          "path": ["users", "bonjour"],
+          "query": [{
+            "key": "nom",
+            "value": "Reda"
+          }]
         }
       },
       "event": [{
