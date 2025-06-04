@@ -4,20 +4,20 @@ pipeline {
   stages {
     stage('Start WireMock') {
       steps {
-        sh 'docker compose up -d'
-        sh 'sleep 5'
+        bat 'docker compose up -d'
+        bat 'timeout /t 5'
       }
     }
 
     stage('Run Newman tests') {
       steps {
-        sh 'newman run wiremock-movies-tests.postman_collection.json'
+        bat 'newman run wiremock-movies-tests.postman_collection.json'
       }
     }
 
     stage('Stop WireMock') {
       steps {
-        sh 'docker compose down'
+        bat 'docker compose down'
       }
     }
   }
