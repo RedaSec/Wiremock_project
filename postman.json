@@ -21,7 +21,8 @@
         "script": {
           "exec": [
             "pm.test(\"Status is 200\", () => pm.response.to.have.status(200));",
-            "console.log(\"Body:\", pm.response.text());"
+            "console.log(\"Body (parsed):\");",
+            "console.log(JSON.stringify(pm.response.json(), null, 2));"
           ],
           "type": "text/javascript"
         }
@@ -44,7 +45,8 @@
         "script": {
           "exec": [
             "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
-            "console.log(\"Body:\", pm.response.text());"
+            "console.log(\"Body (parsed):\");",
+            "console.log(JSON.stringify(pm.response.json(), null, 2));"
           ],
           "type": "text/javascript"
         }
@@ -71,7 +73,8 @@
         "script": {
           "exec": [
             "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
-            "console.log(\"Body:\", pm.response.text());"
+            "console.log(\"Body (parsed):\");",
+            "console.log(JSON.stringify(pm.response.json(), null, 2));"
           ],
           "type": "text/javascript"
         }
@@ -94,7 +97,8 @@
         "script": {
           "exec": [
             "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
-            "console.log(\"Body:\", pm.response.text());"
+            "console.log(\"Body (parsed):\");",
+            "console.log(JSON.stringify(pm.response.json(), null, 2));"
           ],
           "type": "text/javascript"
         }
@@ -117,7 +121,8 @@
         "script": {
           "exec": [
             "pm.test(\"Status 404\", () => pm.response.to.have.status(404));",
-            "console.log(\"Body:\", pm.response.text());"
+            "console.log(\"Body (parsed):\");",
+            "console.log(JSON.stringify(pm.response.json(), null, 2));"
           ],
           "type": "text/javascript"
         }
@@ -144,7 +149,8 @@
         "script": {
           "exec": [
             "pm.test(\"Status 200\", () => pm.response.to.have.status(200));",
-            "console.log(\"Body:\", pm.response.text());"
+            "console.log(\"Body (parsed):\");",
+            "console.log(JSON.stringify(pm.response.json(), null, 2));"
           ],
           "type": "text/javascript"
         }
