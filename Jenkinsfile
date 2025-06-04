@@ -5,7 +5,7 @@ pipeline {
     stage('Start WireMock') {
       steps {
         bat 'docker compose up -d'
-        bat 'timeout /t 5'
+        bat 'ping -n 6 127.0.0.1 >nul'
       }
     }
 
